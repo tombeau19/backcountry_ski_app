@@ -9,7 +9,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI);
 
-var index = require('./routes/index');
+
 
 var app = express();
 
@@ -25,7 +25,19 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Set up My CONTROLLERS
+//index route
+const index = require('./routes/index')
 app.use('/', index);
+
+const userController = require('./routes/userController')
+app.use('/users', userController)
+
+//const mountainController = require('./routes/mountainController')
+//app.use('/mountains', mountainController)
+
+//const trailController = require('./routes/trailController')
+//app.use('/mountains/:mountainId/trails')
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
