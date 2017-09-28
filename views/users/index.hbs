@@ -1,11 +1,12 @@
 <h1>Check out some Backcountry Legends</h1>
 
+<a href="/users/new">Start Exploring</a>
+
 <div>
     {{#each users}}
-        <div>{{this.name}} from {{this.hometown}} <span><img src="{{this.img}}" alt="pic"></span></div>
-        
-        
+    <div>{{this.name}} from {{this.hometown}} <span><img src="{{this.img}}" alt="pic"></span></div>
+    <div><a href="/users/{{this._id}}">More Info</a></div>
     {{/each}}
-    
+
 
 </div>

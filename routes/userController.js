@@ -16,17 +16,59 @@ router.get('/', (req, res) => {
         .catch((error) => {
             console.log(error)
         })
+
 })
 
+// NEW ROUTE
+router.get('/new', (req, res) => {
+    res.render('users/new')
+})
 
+// CREATE ROUTE
+router.post('/', (req, res) => {
 
+    const newUser = req.body
 
+    UserModel.create(newUser)
+        .then(() => {
+            res.redirect('/users')
+        })
+        .catch((error) => {
+            console.log(error)
+        })
 
+})
 
+// SHOW ROUTE
+router.get('/:userId', (req, res) => {
 
+    const userId = req.params.userId
 
+    UserModel.findById(userId)
+        .then((user) => {
+            res.render('users/show', {
+                user: user
+            })
+        })
+        .catch((error) => {
+            console.log(error)
+        })
 
+})
 
+// DELETE ROUTE
+router.get('/:userId/delete', (req, res) => {
+
+    const userId = req.params.userId
+
+    UserModel.findById(userId).remove()
+        .then(() => {
+            res.redirect('/users')
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+})
 
 
 module.exports = router
