@@ -31,10 +31,6 @@ const MountainSchema = new Schema({
         type: String,
         required: true
     },
-    zipCode: {
-        type: String,
-        required: true
-    },
     avalancheDanger: String,
     trails: [TrailSchema]
 })
@@ -46,14 +42,14 @@ const UserSchema = new Schema({
         required: true
     },
     favoriteMountain: String,
-    ability: {
-        type: Number,
-        required: true
-    },
     img: {
         type: String,
         required: true,
         unique: true
+    },
+    ability: {
+        type: Number,
+        required: true
     },
     hometown: {
         type: String,
@@ -65,6 +61,10 @@ const UserSchema = new Schema({
 const UserModel = mongoose.model('User', UserSchema)
 const MountainModel = mongoose.model('Mountain', MountainSchema)
 const TrailModel = mongoose.model('Trail', TrailSchema)
+
+
+
+
 
 //export these beautiful models so they can be required elsewhere
 module.exports = {

@@ -31,8 +31,46 @@ MountainModel.removeListener({}, (err) => {
     console.log(err)
 })
 
-//create users, mountains, and trails --
-const samShaefer = new UserModel({ name: 'Sam Shaefer' }, { favoriteMountain: 'Vail' }, { img: 'https://imgur.com/N26jDAC' }, { ability: 3 }, { hometown: 'Hingham, MA' })
-const mattWest = new UserModel({ name: 'Matt West' }, { favoriteMountain: 'Jackson Hole' }, { img: 'https://imgur.com/sburJHc' }, { ability: 3 }, { hometown: 'San Diego, CA' })
-const adeleKeating = new UserModel({ name: 'Adele Keating' }, { favoriteMountain: 'Park City' }, { img: 'https://imgur.com/xxXGOEQ' }, { ability: 3 }, { hometown: 'Pheonix, AZ' })
+//create users, mountains, and trails to seed our database--
+const samShaefer = new UserModel({ name: 'Sam Shaefer', favoriteMountain: 'Vail', img: 'https://imgur.com/N26jDAC', ability: 3, hometown: 'Hingham, MA' })
+const mattWest = new UserModel({ name: 'Matt West', favoriteMountain: 'Jackson Hole', img: 'https://imgur.com/sburJHc', ability: 3, hometown: 'San Diego, CA' })
+const adeleKeating = new UserModel({ name: 'Adele Keating', favoriteMountain: 'Park City', img: 'https://imgur.com/xxXGOEQ', ability: 3, hometown: 'Pheonix, AZ' })
 
+const mountTallac = new MountainModel({ name: 'Mount Tallac', town: 'South Lake Tahoe', state: 'California', avalancheDanger: 'Moderate' })
+const meadowMountain = new MountainModel({ name: 'Meadow Mountain', town: 'Minturn', state: 'Colorado', avalancheDanger: 'Low' })
+const lovelandPass = new MountainModel({ name: 'Loveland Pass', town: 'Loveland', state: 'Colorado' , avalancheDanger: 'Considerable' })
+
+const easyTrail = new TrailModel({ difficulty: 'Begginer', description: 'Mellow pitch with open space' })
+const moderateTrail = new TrailModel({ difficulty: 'Intermediate', description: 'Areas of crowded Aspens, some steeps' })
+const hardTrail = new TrailModel({ difficulty: 'Expert', description: 'Steep terrain with variable conditions and cliff faces'})
+
+//assign trails to mountains
+const mountains = [mountTallac, meadowMountain, lovelandPass]
+const trails = [easyTrail, moderateTrail, hardTrail]
+const users = [samShaefer, mattWest, adeleKeating]
+
+mountains.forEach((mountain) => {
+
+    mountain.trails = trails
+
+    mountain.save()
+        .then((mountain) => {
+            console.log(`${mountain.name} saved, wooohooo!`)
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+})
+
+users.forEach((user) => {
+    user.save()
+        .then((user) => {
+            console.log(`${user.name} saved, cool!`)
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+})
+
+//disconnect from the db
+db.close()
