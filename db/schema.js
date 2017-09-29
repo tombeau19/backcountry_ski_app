@@ -63,9 +63,6 @@ const MountainModel = mongoose.model('Mountain', MountainSchema)
 const TrailModel = mongoose.model('Trail', TrailSchema)
 
 
-
-
-
 //export these beautiful models so they can be required elsewhere
 module.exports = {
     UserModel: UserModel,

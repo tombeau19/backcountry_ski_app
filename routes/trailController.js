@@ -110,7 +110,7 @@ router.put('/:trailId', (req, res) => {
 router.get('/:trailId', (req, res) => {
     const mountainId = req.params.mountainId
     const trailId = req.params.trailId
-    //const mountainName = req.params.mountain
+    const mountainName = req.params.mountain
 
     MountainModel.findById(mountainId)
         .then((mountain) => {
@@ -128,10 +128,23 @@ router.get('/:trailId', (req, res) => {
         })
 })
 
+// DELTE ROUTE
 
+router.get('/:trailId/delete', (req, res) => {
 
+    const mountainId = req.params.mountainId
+    const trailId = req.params.trailId
 
+    MountainModel.findById(mountainId)
+        .then((mountain) => {
+            const trail = mountain.trails.id(trailId).remove()
+            return mountain.save()
+        })
+        .then(() => {
+            res.redirect(`/mountains/${mountainId}/trails`)
+        })
 
+})
 
 
 module.exports = router
