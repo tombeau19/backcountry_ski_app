@@ -39,6 +39,40 @@ router.post('/', (req, res) => {
 
 })
 
+// EDIT ROUTE
+router.get('/:userId/edit', (req, res) => {
+
+    const userId = req.params.userId
+
+    UserModel.findById(userId)
+        .then((user) => {
+            res.render('users/edit', {
+                user: user
+            })
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+
+})
+
+// UPDATE ROUTE
+router.put('/:userId', (req, res) => {
+    
+    const userId = req.params.userId
+
+    const updatedUser = req.body
+
+    UserModel.findByIdAndUpdate(userId, updatedUser, { new: true })
+        .then(() => {
+            res.redirect(`/users/${userId}`)
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+
+})
+
 // SHOW ROUTE
 router.get('/:userId', (req, res) => {
 

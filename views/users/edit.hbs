@@ -1,0 +1,23 @@
+<form action="/users/{{user._id}}?_method=PUT" method="POST">
+   <div><label for="name">Name</label>
+    <input type="text" name="name" value="{{user.name}}">
+</div> 
+<div>
+    <label for="favoriteMountain">Favorite Mountain</label>
+    <input type="text" name="favoriteMountain" value="{{user.favoriteMountain}}">
+    </div>
+<div></div>
+    <label for="img">Link to a Profile Picture</label>
+    <input type="text" name="img" value="{{user.img}}">
+</div>
+<div>
+    <label for="ability">Ability - 1, 2, or 3</label>
+    <input type="text" name="ability" value="{{user.ability}}">
+</div>
+<div>
+    <label for="hometown">Hometown</label>
+    <input type="text" name="hometown" value="{{user.hometown}}">
+</div>
+
+    <input type="submit" value="Edit">
+</form>
