@@ -31,7 +31,23 @@ const MountainSchema = new Schema({
         type: String,
         required: true
     },
-    avalancheDanger: String,
+    zipCode: {
+        type: Number,
+        required: true
+    },
+    parking: {
+        type: String,
+        required: true
+    },
+    accessPoint: {
+        type: String,
+        required: true
+    },
+    hike: {
+        type: String,
+        required: true
+    },
+    img: String,
     trails: [TrailSchema]
 })
 
@@ -69,8 +85,3 @@ module.exports = {
     MountainModel: MountainModel,
     TrailModel: TrailModel
 }
-
-
-
-
-

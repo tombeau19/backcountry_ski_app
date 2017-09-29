@@ -1,16 +1,16 @@
-<div><h1>Backcountry Ski Spots</h1><div><a href="/mountains/new">Add a Mountain</a></div></div>
+<div><h1>Backcountry Ski Spots</h1></div>
+<div><h2><a href="/mountains/new">Add a Mountain</a></h2></div>
 
 
 
 <div>
     {{#each mountains}}
     <div>
-        Visit {{this.name}} located in {{this.town}}, {{this.state}}
+        <h3>{{this.name}} located in {{this.town}}, {{this.state}} {{this.zipCode}}</h3><span><img src="" alt="picture of {{this.name}}"></span>
     </div>
     
     <div><a href="/mountains/{{this._id}}">More Info</a></div>
     {{/each}}
-
 </div>
 
 <a href="/">Home</a>
