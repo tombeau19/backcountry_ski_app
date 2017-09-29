@@ -35,7 +35,7 @@ MountainModel.remove({}, (err) => {
 const samShaefer = new UserModel({ name: 'Sam Shaefer', favoriteMountain: 'Vail', img: 'https://i.imgur.com/N26jDACt.jpg', ability: 3, hometown: 'Hingham, MA' })
 const mattWest = new UserModel({ name: 'Matt West', favoriteMountain: 'Jackson Hole', img: 'https://i.imgur.com/sburJHct.jpg', ability: 3, hometown: 'San Diego, CA' })
 const adeleKeating = new UserModel({ name: 'Adele Keating', favoriteMountain: 'Park City', img: 'https://i.imgur.com/xxXGOEQt.jpg', ability: 3, hometown: 'Pheonix, AZ' })
-const georgiaBeauregard = new UserModel({ name: 'Georgia Beauregard', favoriteMountain: 'Zermatt', img})
+const georgiaBeauregard = new UserModel({ name: 'Georgia Beauregard', favoriteMountain: 'Zermatt', img: 'https://i.imgur.com/TEBoWyFt.jpg', ability: 3, hometown: 'Roswell, GA' })
 
 const mountTallac = new MountainModel({ name: 'Mount Tallac', town: 'South Lake Tahoe', state: 'California', avalancheDanger: 'Moderate' })
 const meadowMountain = new MountainModel({ name: 'Meadow Mountain', town: 'Minturn', state: 'Colorado', avalancheDanger: 'Low' })
@@ -48,7 +48,7 @@ const hardTrail = new TrailModel({ difficulty: 'Expert', description: 'Steep ter
 //assign trails to mountains
 const mountains = [mountTallac, meadowMountain, lovelandPass]
 const trails = [easyTrail, moderateTrail, hardTrail]
-const users = [samShaefer, mattWest, adeleKeating]
+const users = [samShaefer, mattWest, adeleKeating, georgiaBeauregard]
 
 mountains.forEach((mountain) => {
 
