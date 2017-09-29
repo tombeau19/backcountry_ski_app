@@ -35,10 +35,11 @@ MountainModel.remove({}, (err) => {
 const samShaefer = new UserModel({ name: 'Sam Shaefer', favoriteMountain: 'Vail', img: 'https://i.imgur.com/N26jDACt.jpg', ability: 3, hometown: 'Hingham, MA' })
 const mattWest = new UserModel({ name: 'Matt West', favoriteMountain: 'Jackson Hole', img: 'https://i.imgur.com/sburJHct.jpg', ability: 3, hometown: 'San Diego, CA' })
 const adeleKeating = new UserModel({ name: 'Adele Keating', favoriteMountain: 'Park City', img: 'https://i.imgur.com/xxXGOEQt.jpg', ability: 3, hometown: 'Pheonix, AZ' })
+const georgiaBeauregard = new UserModel({ name: 'Georgia Beauregard', favoriteMountain: 'Zermatt', img})
 
 const mountTallac = new MountainModel({ name: 'Mount Tallac', town: 'South Lake Tahoe', state: 'California', avalancheDanger: 'Moderate' })
 const meadowMountain = new MountainModel({ name: 'Meadow Mountain', town: 'Minturn', state: 'Colorado', avalancheDanger: 'Low' })
-const lovelandPass = new MountainModel({ name: 'Loveland Pass', town: 'Loveland', state: 'Colorado' , avalancheDanger: 'Considerable' })
+const lovelandPass = new MountainModel({ name: 'Loveland Pass', town: 'Loveland', state: 'Colorado', avalancheDanger: 'Considerable' })
 
 const easyTrail = new TrailModel({ difficulty: 'Begginer', description: 'Mellow pitch with open space' })
 const moderateTrail = new TrailModel({ difficulty: 'Intermediate', description: 'Areas of crowded Aspens, some steeps' })

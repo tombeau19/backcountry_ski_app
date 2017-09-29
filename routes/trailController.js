@@ -43,12 +43,17 @@ router.post('/', (req, res) => {
             mountain.trails.push(newTrail)
             return mountain.save()
         })
-        .then((mountain) => {
+        .then(() => {
             res.redirect(`/mountains/${mountainId}/trails`)
+        })
+        .catch((error) => {
+            console.log(error)
         })
         
 })
 
+// EDIT route
+router.get('/:')
 
 
 
