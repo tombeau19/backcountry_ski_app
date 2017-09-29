@@ -146,5 +146,4 @@ router.get('/:trailId/delete', (req, res) => {
 
 })
 
-
 module.exports = router
