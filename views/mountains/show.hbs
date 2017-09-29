@@ -4,15 +4,26 @@
     </div>
 
     <div>
-        <h3>Beautiful {{mountain.name}} located in {{mountain.town}}, {{mountain.state}}</h3>
+        <h3>{{mountain.town}}, {{mountain.state}} {{mountain.zipCode}}</h3>
+    </div>
+    <div>
+        <h3>Parking</h3>
+        <p>{{mountain.parking}}</p>
+    </div>
+    <div>
+        <h3>Access Point</h3>
+        <p>{{mountain.accessPoint}}</p>
+    </div>
+    <div>
+        <h3>The Hike In</h3>
+        <p>{{mountain.hike}}</p>
     </div>
     <div>
         <h4><a href="/mountains/{{mountain._id}}/trails">Recommended Trails</a> </h4>
     </div>
+    <img src="{{mountain.img}}" alt="picture of {{mountain.img}}">
 
-    <div>
-        <p>currently the avalanche danger is {{mountain.avalancheDanger}}</p>
-    </div>
+    
 </div>
 
 <a href="/mountains">Back to Mountains</a>
