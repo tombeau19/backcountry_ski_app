@@ -53,7 +53,81 @@ router.post('/', (req, res) => {
 })
 
 // EDIT route
-router.get('/:')
+router.get('/:trailId/edit', (req, res) => {
+
+    // we need to get the company ID because the trail lives there
+    const mountainId = req.params.mountainId
+
+    // we need the trail ID because that is what we will edit
+    const trailId = req.params.trailId
+
+    // next we need to find the mountain by ID
+    MountainModel.findById(mountainId)
+        .then((mountain) => {
+            //now we have the mountain
+            //but we need to find the trail to edit
+            const trail = mountain.trails.id(trailId)
+
+            //now we need to see a pre-populated form
+            res.render('trails/edit', {
+                trail: trail,
+                mountainId: mountainId
+            })
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+
+})
+
+// UPDATE ROUTE
+router.put('/:trailId', (req, res) => {
+
+    const mountainId = req.params.mountainId
+    const trailId = req.params.trailId
+    const updatedTrail = req.body
+
+    MountainModel.findById(mountainId)
+        .then((mountain) => {
+
+            const trail = mountain.trails.id(trailId)
+
+            trail.description = updatedTrail.description
+            trail.difficulty = updatedTrail.difficulty
+
+            return mountain.save()
+        })
+        .then(() => {
+            res.redirect(`/mountains/${mountainId}/trails/${trailId}`)
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+
+})
+
+// SHOW ROUTE
+router.get('/:trailId', (req, res) => {
+    const mountainId = req.params.mountainId
+    const trailId = req.params.trailId
+    //const mountainName = req.params.mountain
+
+    MountainModel.findById(mountainId)
+        .then((mountain) => {
+            const trail = mountain.trails.id(trailId)
+            const mountainName = mountain.name
+
+            res.render('trails/show', {
+                trail: trail,
+                mountainId: mountainId,
+                mountainName: mountainName
+            })
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+})
+
 
 
 

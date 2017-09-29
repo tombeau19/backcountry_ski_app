@@ -1,0 +1,11 @@
+<form action="/mountains/{{mountainId}}/trails/{{trail._id}}?_method=PUT" method="POST">
+    <label for="difficulty">Difficulty</label>
+    <input type="text" name="difficulty" value="{{trail.difficulty}}">
+
+    <label for="description">Description</label>
+    <input type="text" name="description" value="{{trail.description}}">
+
+    <input type="submit" value="Edit">
+</form>
+
+<a href="/mountains/{{mountainId}}/trails/{{trail._id}}">Back to Trail</a>
