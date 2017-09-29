@@ -27,7 +27,7 @@ const TrailModel = Schema.TrailModel
 UserModel.remove({}, (err) => {
     console.log(err)
 })
-MountainModel.removeListener({}, (err) => {
+MountainModel.remove({}, (err) => {
     console.log(err)
 })
 

@@ -25,11 +25,28 @@ router.get('/', (req, res) => {
 router.get('/new', (req, res) => {
 
     const mountainId = req.params.mountainId
-    
+
     res.render('trails/new', {
         mountainId: mountainId
     })
 
+})
+
+// CREATE ROUTE
+router.post('/', (req, res) => {
+
+    const mountainId = req.params.mountainId
+    const newTrail = req.body
+
+    MountainModel.findById(mountainId)
+        .then((mountain) => {
+            mountain.trails.push(newTrail)
+            return mountain.save()
+        })
+        .then((mountain) => {
+            res.redirect(`/mountains/${mountainId}/trails`)
+        })
+        
 })
 
 
