@@ -2,15 +2,15 @@ const express = require('express')
 const router = express.Router()
 
 const Schema = require('../db/schema.js')
-const UserModel = Schema.UserModel
+const MountainModel = Schema.MountainModel
 
 //INDEX ROUTE
 router.get('/', (req, res) => {
 
-    UserModel.find({})
-        .then((users) => {
-            res.render('users/index', {
-                users: users
+    MountainModel.find({})
+        .then((mountains) => {
+            res.render('mountains/index', {
+                mountains: mountains
             })
         })
         .catch((error) => {
@@ -21,17 +21,17 @@ router.get('/', (req, res) => {
 
 // NEW ROUTE
 router.get('/new', (req, res) => {
-    res.render('users/new')
+    res.render('mountains/new')
 })
 
 // CREATE ROUTE
 router.post('/', (req, res) => {
 
-    const newUser = req.body
+    const newMountain = req.body
 
-    UserModel.create(newUser)
+    MountainModel.create(newMountain)
         .then(() => {
-            res.redirect('/users')
+            res.redirect('/mountains')
         })
         .catch((error) => {
             console.log(error)
@@ -40,14 +40,14 @@ router.post('/', (req, res) => {
 })
 
 // SHOW ROUTE
-router.get('/:userId', (req, res) => {
+router.get('/:mountainId', (req, res) => {
 
-    const userId = req.params.userId
+    const mountainId = req.params.mountainId
 
-    UserModel.findById(userId)
-        .then((user) => {
-            res.render('users/show', {
-                user: user
+    MountainModel.findById(mountainId)
+        .then((mountain) => {
+            res.render('mountains/show', {
+                mountain: mountain
             })
         })
         .catch((error) => {
@@ -57,17 +57,18 @@ router.get('/:userId', (req, res) => {
 })
 
 // DELETE ROUTE
-router.get('/:userId/delete', (req, res) => {
+router.get('/:mountainId/delete', (req, res) => {
 
-    const userId = req.params.userId
+    const mountainId = req.params.mountainId
 
-    UserModel.findById(userId).remove()
+    MountainModel.findById(mountainId).remove()
         .then(() => {
-            res.redirect('/users')
+            res.redirect('/mountains')
         })
         .catch((error) => {
             console.log(error)
         })
+
 })
 
 
