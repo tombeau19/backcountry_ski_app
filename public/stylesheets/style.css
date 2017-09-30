@@ -1,14 +1,17 @@
 body {
-  padding: 50px;
+  padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  color: #314358
+  color: #314358;
 }
-#landing { 
+
+.landing { 
   background: url('/images/mountainbackground.jpeg') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  height: 100vh;
+  width: 100vw;
 }
 
 a {
@@ -16,5 +19,10 @@ a {
 }
 
 .holder {
-  background-color: rgba(49, 67, 88, 0.5)
+  background-color: rgba(49, 67, 88, 0.5);
+  color: #D5DFE6;
+}
+
+.content {
+  padding: 9px;
 }
