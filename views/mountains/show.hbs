@@ -1,29 +1,40 @@
+<header>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo">Backcountry Buddy</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/mountains">Mountains</a></li>
+                <li><a href="/users">Users</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
 <div>
     <div>
-        <h1>{{mountain.name}}</h1>
+        <h3>{{mountain.name}}</h3>
     </div>
 
     <div>
-        <h3>{{mountain.town}}, {{mountain.state}} {{mountain.zipCode}}</h3>
+        <h5>{{mountain.town}}, {{mountain.state}} {{mountain.zipCode}}</h5>
     </div>
-    <div>
-        <h3>Parking</h3>
-        <p>{{mountain.parking}}</p>
+    <div class='row'>
+        <div class='col s5 center-align z-depth-4'>
+            <h5>Parking</h5>
+            <p>{{mountain.parking}}</p>
+            <h5>Access Point</h5>
+            <p>{{mountain.accessPoint}}</p>
+            <h5>The Hike In</h5>
+            <p>{{mountain.hike}}</p>
+            <div class="row">
+            <div class='col s8 offset-s2 holder hoverable'>
+                <h4><a class='nav' href="/mountains/{{mountain._id}}/trails">Where to Ski</a> </h4>
+            </div>
+            </div>
+        </div>
+        <div class='col s7'>
+            <img class="responsive-img z-depth-4" src="{{mountain.img}}" alt="picture of {{mountain.img}}">
+        </div>
     </div>
-    <div>
-        <h3>Access Point</h3>
-        <p>{{mountain.accessPoint}}</p>
-    </div>
-    <div>
-        <h3>The Hike In</h3>
-        <p>{{mountain.hike}}</p>
-    </div>
-    <div>
-        <h4><a href="/mountains/{{mountain._id}}/trails">Recommended Trails</a> </h4>
-    </div>
-    <img src="{{mountain.img}}" alt="picture of {{mountain.img}}">
 
-    
 </div>
-
-<a href="/mountains">Back to Mountains</a>

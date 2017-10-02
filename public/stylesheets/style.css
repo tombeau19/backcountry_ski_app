@@ -45,7 +45,11 @@ a {
   width: 100vw;
 }
 
-a.cardLink {
-  color: rgb(49, 67, 88);
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid rgb(49, 67, 88);
+  box-shadow: 0 1px 0 0 rgb(49, 67, 88);
 }
 
+.input-field input[type=text]:focus + label {
+  color: rgb(49, 67, 88);
+}

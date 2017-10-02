@@ -1,38 +1,52 @@
-<form action="/mountains" method="POST">
-    <div>
-        <label for="name">Name</label>
-        <input type="text" name="name">
-    </div>
-    <div>
-        <label for="town">Town</label>
-        <input type="text" name="town">
-    </div>
-    <div>
-        <label for="state">State</label>
-        <input type="text" name="state">
-    </div>
-    <div>
-        <label for="zipCode">Zip Code</label>
-        <input type="text" name="zipCode">
-    </div>
-    <div>
-        <label for="parking">parking</label>
-        <input type="text" name="parking">
-    </div>
-    <div>
-        <label for="accessPoint">Access Point</label>
-        <input type="text" name="accessPoint">
-    </div>
-    <div>
-        <label for="hike">Hike</label>
-        <input type="text" name="hike">
-    </div>
-    <div>
-        <label for="img">upload an image</label>
-        <input type="text" name="img">
-    </div>
-    
-    
-
-    <input type="submit" value="Create">
-</form>
+<header>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo">Backcountry Buddy</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/mountains">Mountains</a></li>
+                <li><a href="/users">Users</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<br><br><br>
+<div class='container'>
+    <br>
+    <form action="/mountains" method="POST">
+        <div class='row'>
+            <div class='input-field col s4'>
+                <label for="name">Name</label>
+                <input type="text" name="name">
+            </div>
+            <div class='input-field col s4'>
+                <label for="town">Town</label>
+                <input type="text" name="town">
+            </div>
+            <div class='input-field col s2'>
+                <label for="state">State</label>
+                <input type="text" name="state">
+            </div>
+            <div class='input-field col s2'>
+                <label for="zipCode">Zip Code</label>
+                <input type="text" name="zipCode">
+            </div>
+        </div>
+        <div class='input-field'>
+            <label for="parking">where to park</label>
+            <input type="text" name="parking">
+        </div>
+        <div class='input-field'>
+            <label for="accessPoint">Where is the trailhead?</label>
+            <input type="text" name="accessPoint">
+        </div>
+        <div class='input-field'>
+            <label for="hike">Describe the hike</label>
+            <input type="text" name="hike">
+        </div>
+        <div class='input-field'>
+            <label for="img">upload an image</label>
+            <input type="text" name="img">
+        </div>
+        <input type="submit" value="Add This Mountain">
+    </form>
+</div>

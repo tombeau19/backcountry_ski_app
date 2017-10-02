@@ -39,6 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Set up My CONTROLLERS
 //index route
+
 const index = require('./routes/index')
 app.use('/', index);
 

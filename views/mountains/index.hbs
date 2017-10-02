@@ -3,40 +3,43 @@
         <div class="nav-wrapper">
             <a href="/" class="brand-logo">Backcountry Buddy</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/mountains">Mountains</a></li>
                 <li><a href="/users">Users</a></li>
             </ul>
         </div>
     </nav>
 </header>
 
-<div>
-    <div>
-        <h3>Backcountry Ski Spots</h3>
-    </div>
-    <div>
-        <h5><a href="/mountains/new">Add a Mountain</a></h5>
-    </div>
 
-    <div>
-
-        {{#each mountains}}
-        <div class="row">
-            <div class="col s12 m7">
-                <div class="card small">
-                    <div class="card-image">
-                        <img src="{{this.img}}">
-                        <span class="card-title">{{this.name}}</span>
-                    </div>
-                    <div class="card-content">
-                        <p>Located in {{this.town}}, {{this.state}} {{this.zipCode}}</p>
-                    </div>
-                    <div class="card-action">
-                        <a class='cardLink' href="/mountains/{{this._id}}">More Info</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {{/each}}
-
+<div class='row center'>
+    <div class="col s12">
+        <h3>Backcountry Spots</h3>
     </div>
 </div>
+<div class="row center">
+    <div class="col s2 offset-s5 holder hoverable">
+        <h5><a class='nav' href="/mountains/new">Add a Mountain</a></h5>
+    </div>
+</div>
+
+
+
+
+{{#each mountains}}
+<div class="row center">
+    <div class="col s8 offset-s2">
+        <div class="card small">
+            <div class="card-image">
+                <img src="{{this.img}}">
+                <span class="card-title">{{this.name}}</span>
+            </div>
+            <div class="card-content">
+                <p>Located in {{this.town}}, {{this.state}} {{this.zipCode}}</p>
+            </div>
+            <div class="card-action">
+                <a class='nav' href="/mountains/{{this._id}}">More Info</a>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}
