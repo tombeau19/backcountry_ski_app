@@ -55,7 +55,7 @@ router.post('/', (req, res) => {
 // EDIT route
 router.get('/:trailId/edit', (req, res) => {
 
-    // we need to get the company ID because the trail lives there
+    // we need to get the mountain ID because the trail lives there
     const mountainId = req.params.mountainId
 
     // we need the trail ID because that is what we will edit
@@ -71,7 +71,8 @@ router.get('/:trailId/edit', (req, res) => {
             //now we need to see a pre-populated form
             res.render('trails/edit', {
                 trail: trail,
-                mountainId: mountainId
+                mountainId: mountainId,
+                mountainName: mountain.name
             })
         })
         .catch((error) => {
@@ -98,7 +99,7 @@ router.put('/:trailId', (req, res) => {
             return mountain.save()
         })
         .then(() => {
-            res.redirect(`/mountains/${mountainId}/trails/${trailId}`)
+            res.redirect(`/mountains/${mountainId}/trails`)
         })
         .catch((error) => {
             console.log(error)
