@@ -1,16 +1,42 @@
-<div><h1>Backcountry Ski Spots</h1></div>
-<div><h2><a href="/mountains/new">Add a Mountain</a></h2></div>
-
-
+<header>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo">Backcountry Buddy</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/users">Users</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
 
 <div>
-    {{#each mountains}}
     <div>
-        <h3>{{this.name}} located in {{this.town}}, {{this.state}} {{this.zipCode}}</h3><span><img src="" alt="picture of {{this.name}}"></span>
+        <h3>Backcountry Ski Spots</h3>
     </div>
-    
-    <div><a href="/mountains/{{this._id}}">More Info</a></div>
-    {{/each}}
-</div>
+    <div>
+        <h5><a href="/mountains/new">Add a Mountain</a></h5>
+    </div>
 
-<a href="/">Home</a>
+    <div>
+
+        {{#each mountains}}
+        <div class="row">
+            <div class="col s12 m7">
+                <div class="card small">
+                    <div class="card-image">
+                        <img src="{{this.img}}">
+                        <span class="card-title">{{this.name}}</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Located in {{this.town}}, {{this.state}} {{this.zipCode}}</p>
+                    </div>
+                    <div class="card-action">
+                        <a class='cardLink' href="/mountains/{{this._id}}">More Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+
+    </div>
+</div>

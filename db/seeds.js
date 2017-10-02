@@ -69,7 +69,7 @@ const mountTallac = new MountainModel({
     parking: 'Available at the Trailhead',
     accessPoint: 'The trailhead is located approximately 3-1/2 miles north of South Lake Tahoe on Highway 89. Look for the Mt. Tallac Trailhead sign directly across from the entrance to Baldwin Beach. Turn left down the dirt road and continue to the trailhead parking.',
     hike: 'There likely will be a skin track or boot pack trail right from your car.  If not, head in a southwesterly direction through the trees and (hopefully) snow-covered shrubs.  Ascend up and angle gradually to your left, aiming for the obvious gap where Tallac Creek flows out of the NE bowl. From here, climb easily around the west side of the summit (there will likely be wind exposed rocks here) and on up to the top.',
-    img: 'https://goo.gl/images/U8NccA',
+    img: 'http://www.skitahoebackcountry.com/wp-content/uploads/DSCN6415.jpg',
 })
 const meadowMountain = new MountainModel({
     name: 'Meadow Mountain',

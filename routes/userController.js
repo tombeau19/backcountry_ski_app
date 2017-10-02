@@ -104,5 +104,4 @@ router.get('/:userId/delete', (req, res) => {
         })
 })
 
-
 module.exports = router

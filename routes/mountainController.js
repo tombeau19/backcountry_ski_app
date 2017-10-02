@@ -71,5 +71,4 @@ router.get('/:mountainId/delete', (req, res) => {
 
 })
 
-
 module.exports = router
