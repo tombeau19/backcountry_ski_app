@@ -1,23 +1,39 @@
-<form action="/users" method="POST">
-   <div><label for="name">Name</label>
-    <input type="text" name="name">
-</div> 
-<div>
-    <label for="favoriteMountain">Favorite Mountain</label>
-    <input type="text" name="favoriteMountain">
-    </div>
-<div></div>
-    <label for="img">Link to a Profile Picture</label>
-    <input type="text" name="img">
-</div>
-<div>
-    <label for="ability">Ability - 1, 2, or 3</label>
-    <input type="text" name="ability">
-</div>
-<div>
-    <label for="hometown">Hometown</label>
-    <input type="text" name="hometown">
-</div>
+<header>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo">Backcountry Buddy</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/mountains">Mountains</a></li>
+                <li><a href="/users">Users</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<br><br><br>
+<div class='container'>
+    <form action="/users" method="POST">
+        <div class='input-field'>
+            <label for="name">Name</label>
+            <input type="text" name="name">
+        </div>
+        <div class='input-field'>
+            <label for="favoriteMountain">Favorite Mountain</label>
+            <input type="text" name="favoriteMountain">
+        </div>
+        <div class='input-field'>
+            <label for="img">Link to a Profile Picture</label>
+            <input type="text" name="img">
+        </div>
+        <div class='input-field'>
+            <label for="ability">Ability - 1, 2, or 3</label>
+            <input type="text" name="ability">
+        </div>
+        <div class='input-field'>
+            <label for="hometown">Hometown</label>
+            <input type="text" name="hometown">
+        </div>
 
-    <input type="submit" value="Create">
-</form>
+        <input type="submit" value="Add Yourself!">
+    </form>
+
+</div>
