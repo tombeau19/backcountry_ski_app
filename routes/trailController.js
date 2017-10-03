@@ -26,8 +26,10 @@ router.get('/new', (req, res) => {
 
     const mountainId = req.params.mountainId
 
+
     res.render('trails/new', {
-        mountainId: mountainId
+        mountainId: mountainId,
+
     })
 
 })
@@ -41,6 +43,7 @@ router.post('/', (req, res) => {
     MountainModel.findById(mountainId)
         .then((mountain) => {
             mountain.trails.push(newTrail)
+
             return mountain.save()
         })
         .then(() => {
@@ -49,7 +52,7 @@ router.post('/', (req, res) => {
         .catch((error) => {
             console.log(error)
         })
-        
+
 })
 
 // EDIT route
@@ -92,10 +95,8 @@ router.put('/:trailId', (req, res) => {
         .then((mountain) => {
 
             const trail = mountain.trails.id(trailId)
-
             trail.description = updatedTrail.description
             trail.difficulty = updatedTrail.difficulty
-
             return mountain.save()
         })
         .then(() => {

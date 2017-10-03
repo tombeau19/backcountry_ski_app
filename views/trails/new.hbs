@@ -1,9 +1,35 @@
-<form action="/mountains/{{mountainId}}/trails" method="POST">
-    <label for="difficulty">Difficulty</label>
-    <input type="text" name="difficulty">
+<header>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo">Backcountry Buddy</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/mountains/{{mountain._id}}">{{mountain.name}}</a></li>
+                <li><a href="/mountains">Mountains</a></li>
+                <li><a href="/users">Users</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
 
-    <label for="description">Description</label>
-    <input type="text" name="description">
+<br><br><br>
 
-    <input type="submit" value="Create">
-</form>
+<div class='container'>
+    <form action="/mountains/{{mountainId}}/trails" method="POST">
+        <div class='input-field'>
+            <label for="difficulty">Difficulty</label>
+            <input type="text" name="difficulty">
+        </div>
+        <div class='input-field'>
+            <label for="description">Description</label>
+            <input type="text" name="description">
+        </div>
+
+        <input type="submit" value="Add Trail">
+    </form>
+
+</div>
+<div class="row center">
+    <div class="col s2 offset-s5 holder hoverable">
+        <h5><a class='nav' href="/mountains/{{mountainId}}/trails">Back</a></h5>
+    </div>
+</div>
