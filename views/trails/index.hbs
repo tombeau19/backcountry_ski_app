@@ -12,23 +12,33 @@
 </header>
 
 
-<div class='row center'>
+<div class='row'>
     <div class="col s12">
         <h3>Skiing/Riding {{mountain.name}}</h3>
     </div>
 </div>
 
-<div class="row center">
-    <div class="col s2 offset-s5 holder hoverable">
-        <h5><a class='nav' href="/mountains/{{mountain._id}}/trails/new">Add a Trail</a></h5>
+<div class="row">
+    <div class="col s2 holder hoverable center-align">
+        <h4><a class='nav center' href="/mountains/{{mountain._id}}/trails/new">Add a Trail</a></h4>
     </div>
 </div>
 
 {{#each mountain.trails}}
-<div>
-    <h4>{{this.difficulty}}</h4>
-    <h5>{{this.description}}</h5>
-</div> 
-<a href="/mountains/{{../mountain._id}}/trails/{{this._id}}/edit">Edit</a>
-<a href="/mountains/{{../mountain._id}}/trails/{{this._id}}/delete">Delete</a>
+<div class='row'>
+    <div class='col s6 z-depth-4'>
+        <h5>Difficulty</h5>
+        <p>{{this.difficulty}}</p>
+        <h5>Description</h5>
+        <p>{{this.description}}</p>
+        <div class="row">
+            <div class='col s3 holder hoverable center-align'>
+                <h4><a class='nav' href="/mountains/{{../mountain._id}}/trails/{{this._id}}/edit">Edit</a></h4>
+            </div>
+            <div class='col s3 offset-s1 holder hoverable center-align'>
+                <h4><a class='nav' href="/mountains/{{../mountain._id}}/trails/{{this._id}}/delete">Delete</a></h4>
+            </div>
+        </div>
+    </div>
+</div>
 {{/each}}
