@@ -23,14 +23,16 @@
             <div class='col s5'>
                 <img class='circle responsive-img' src="{{this.img}}" alt="pic">
             </div>
-            <div class='col s6'>
-                <div class='holder hoverable'>
-                    <a class='nav' href="/users/{{this._id}}">
+            <div class='col s6 row'>
+                <!--<div class='holder hoverable'>
+                    <a class='nav' href="/users/{{this._id}}">-->
                         <h5>{{this.name}}</h5>
-                    </a>
-                </div>
-                <h6>{{this.hometown}}</h6>
+                    <!--</a>
+                </div>-->
+                <h6>From - {{this.hometown}}</h6>
                 <h6>Favorite Mountain - {{this.favoriteMountain}}</h6>
+                <h6>Level - {{this.ability}}</h6>
+                <div class='holder hoverable col s6'><h6 class='center'><a class='nav'href="#">Contact</a></h6 class='center'></div>
             </div>
         </div>
     </div>
