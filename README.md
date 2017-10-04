@@ -10,7 +10,7 @@ https://secret-cliffs-96745.herokuapp.com/
 https://trello.com/b/gQkmZLZH/backcountry-skiing
 
 #link to wireframe
-https://marvelapp.com/project/2296563/
+https://marvelapp.com/6ede570
 
 #ERD 
 https://i.imgur.com/Hc9rfKk.jpg
